@@ -1094,7 +1094,9 @@ void RenderTargetD3D::setTargetTexture(ComPtr<ID3D11Texture2D> tex)
         assert(desc.Width == width());
         assert(desc.Height == height());
         assert(desc.Format == DXGI_FORMAT_R8G8B8A8_UNORM ||
+               desc.Format == DXGI_FORMAT_R8G8B8A8_UNORM_SRGB ||
                desc.Format == DXGI_FORMAT_B8G8R8A8_UNORM ||
+               desc.Format == DXGI_FORMAT_B8G8R8A8_UNORM_SRGB ||
                desc.Format == DXGI_FORMAT_R8G8B8A8_TYPELESS ||
                desc.Format == DXGI_FORMAT_B8G8R8A8_TYPELESS);
 #endif
@@ -1125,10 +1127,16 @@ ID3D11RenderTargetView* RenderTargetD3D::targetRTV()
             case DXGI_FORMAT_R8G8B8A8_TYPELESS:
                 desc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
                 break;
+            case DXGI_FORMAT_R8G8B8A8_UNORM_SRGB:
+				desc.Format = DXGI_FORMAT_R8G8B8A8_UNORM_SRGB;
+                break;
             case DXGI_FORMAT_B8G8R8A8_UNORM:
             case DXGI_FORMAT_B8G8R8A8_TYPELESS:
                 desc.Format = DXGI_FORMAT_B8G8R8A8_UNORM;
                 break;
+			case DXGI_FORMAT_B8G8R8A8_UNORM_SRGB:
+				desc.Format = DXGI_FORMAT_B8G8R8A8_UNORM_SRGB;
+				break;
 
             default:
                 RIVE_UNREACHABLE();
@@ -1170,12 +1178,14 @@ ID3D11UnorderedAccessView* RenderTargetD3D::targetUAV()
             switch (m_targetFormat)
             {
                 case DXGI_FORMAT_R8G8B8A8_UNORM:
+                case DXGI_FORMAT_R8G8B8A8_UNORM_SRGB:
                 case DXGI_FORMAT_R8G8B8A8_TYPELESS:
                     targetUavFormat = m_gpuSupportsTypedUAVLoadStore
                                           ? DXGI_FORMAT_R8G8B8A8_UNORM
                                           : DXGI_FORMAT_R32_UINT;
                     break;
                 case DXGI_FORMAT_B8G8R8A8_UNORM:
+                case DXGI_FORMAT_B8G8R8A8_UNORM_SRGB:
                 case DXGI_FORMAT_B8G8R8A8_TYPELESS:
                     targetUavFormat = m_gpuSupportsTypedUAVLoadStore
                                           ? DXGI_FORMAT_B8G8R8A8_UNORM
