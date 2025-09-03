@@ -298,7 +298,7 @@ do
 
     filter('system:windows')
     do
-        architecture('x64')
+        architecture('ARM64')
         files({ 'src/d3d/*.cpp' })
         files({ 'src/d3d11/*.cpp' })
         files({ 'src/d3d12/*.cpp' })

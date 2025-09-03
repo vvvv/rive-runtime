@@ -225,14 +225,14 @@ if _OPTIONS['os'] == 'android' then
 
     filter({ 'options:arch=x64', 'options:not for_unreal' })
     do
-        architecture('x64')
+        architecture('ARM64')
         buildoptions({ '--target=x86_64-none-linux-android21' })
         linkoptions({ '--target=x86_64-none-linux-android21' })
     end
 
     filter({ 'options:arch=x64', 'options:for_unreal' })
     do
-        architecture('x64')
+        architecture('ARM64')
         buildoptions({ '--target=x86_64-none-linux-androi31' })
         linkoptions({ '--target=x86_64-none-linux-android31' })
     end

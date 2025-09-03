@@ -291,7 +291,7 @@ end
 
 filter('system:windows')
 do
-    architecture('x64')
+    architecture('ARM64')
     defines({ '_USE_MATH_DEFINES', 'NOMINMAX' })
 end
 
@@ -534,7 +534,7 @@ end
 
 filter('system:linux', 'options:arch=x64')
 do
-    architecture('x64')
+    architecture('ARM64')
 end
 
 filter('system:linux', 'options:arch=arm')

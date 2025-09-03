@@ -43,7 +43,7 @@ do
 
     filter('system:windows')
     do
-        architecture('x64')
+        architecture('ARM64')
     end
 end
 
@@ -76,7 +76,7 @@ do
 
     filter('system:windows')
     do
-        architecture('x64')
+        architecture('ARM64')
     end
 
     filter('system:not windows')

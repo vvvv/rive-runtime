@@ -161,6 +161,6 @@ do
         -- https://github.com/webmproject/libwebp/blob/233e86b91f4e0af7833d50013e3b978f825f73f5/src/dsp/cpu.h#L57
         -- webp automaticall enables these for windows so we need to compile
         -- with the correct settings or we get an error.
-        buildoptions({ '-mssse3', '-msse4.1' })
+        -- buildoptions({ '-mssse3', '-msse4.1' })
     end
 end

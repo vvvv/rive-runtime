@@ -84,7 +84,7 @@ if not _OPTIONS['with-webgpu'] then
 
         filter('system:windows')
         do
-            architecture('x64')
+            architecture('ARM64')
             defines({ 'RIVE_WINDOWS', '_CRT_SECURE_NO_WARNINGS' })
             libdirs({
                 RIVE_RUNTIME_DIR .. '/skia/dependencies/glfw_build/src/Release',
@@ -220,7 +220,7 @@ if _OPTIONS['with-webgpu'] or _OPTIONS['with-dawn'] then
 
         filter('system:windows')
         do
-            architecture('x64')
+            architecture('ARM64')
             defines({ 'RIVE_WINDOWS', '_CRT_SECURE_NO_WARNINGS' })
             libdirs({
                 RIVE_RUNTIME_DIR .. '/skia/dependencies/glfw_build/src/Release',

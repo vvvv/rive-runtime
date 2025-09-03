@@ -298,7 +298,7 @@ do
 
     filter('system:windows')
     do
-        architecture('x64')
+        architecture('ARM64')
         defines({ '_USE_MATH_DEFINES' })
     end
 

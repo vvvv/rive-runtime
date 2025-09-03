@@ -22,7 +22,7 @@ files({ '../src/**.cpp' })
 
 filter({ 'system:windows' })
 do
-    architecture('x64')
+    architecture('ARM64')
 end
 
 filter('configurations:debug')

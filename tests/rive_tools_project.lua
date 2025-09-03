@@ -116,7 +116,7 @@ function rive_tools_project(name, project_kind)
 
     filter({ 'system:windows' })
     do
-        architecture('x64')
+        architecture('ARM64')
         defines({
             '_USE_MATH_DEFINES',
             '_CRT_SECURE_NO_WARNINGS',
