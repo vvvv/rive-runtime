@@ -72,7 +72,7 @@ function module.github(project, tag, opts)
         print('Fetching dependency ' .. project .. ' at tag ' .. tag .. '...')
         local gitcmd = 'git -c advice.detachedHead=false -c checkout.workers=4 -C '
             .. dependencies
-            .. ' clone --depth 1 --single-branch --branch '
+            .. ' clone -c core.autocrlf=false --depth 1 --single-branch --branch '
             .. tag
             .. ' https://github.com/'
             .. project

@@ -4,3 +4,6 @@
 # Match each platform's native convention for everything else.
 *.ps1 text eol=crlf
 *.bat text eol=crlf
+
+# rive applies these byte for byte (they mix LF and CRLF on purpose): never convert them, whatever core.autocrlf says.
+scripting/wamr_patches/*.patch -text
